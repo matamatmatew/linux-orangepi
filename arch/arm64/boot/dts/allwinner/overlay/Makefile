@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: GPL-2.0
 dtbo-$(CONFIG_ARCH_SUNXI) += \
-	sun50i-h616-hat-leds.dts \
+	sun50i-h616-hat-leds.dtbo \
 	sun50i-h616-ir.dtbo \
 	sun50i-h616-gpu.dtbo \
 	sun50i-h616-ph-uart2.dtbo \
