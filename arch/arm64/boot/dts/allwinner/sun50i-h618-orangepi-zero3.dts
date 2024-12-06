@@ -41,15 +41,31 @@
 		compatible = "gpio-leds";
 
 		led-red {
-			label = "red_led";
+			function = LED_FUNCTION_RED;
+			color = <LED_COLOR_ID_RED>;
 			gpios = <&pio 2 12 GPIO_ACTIVE_HIGH>; /* PC12 */
 			linux,default-trigger = "none";
 		};
 
 		led-green {
-			label = "green_led";
+			function = LED_FUNCTION_GREEN;
+			color = <LED_COLOR_ID_GREEN>;
 			gpios = <&pio 2 13 GPIO_ACTIVE_HIGH>; /* PC13 */
 			linux,default-trigger = "heartbeat";
+		};
+			
+		led-wlan {
+			function = LED_FUNCTION_WLAN;
+			color = <LED_COLOR_ID_GREEN>;
+			gpios = <&pio 2 1 GPIO_ACTIVE_HIGH>; /* PC1 */
+			linux,default-trigger = "on";
+		};
+
+		led-wan {
+			function = LED_FUNCTION_WAN;
+			color = <LED_COLOR_ID_GREEN>;
+			gpios = <&pio 8 16 GPIO_ACTIVE_HIGH>; /* PC16 */
+			linux,default-trigger = "on";
 		};
 	};
 
@@ -292,7 +308,9 @@
 };
 
 &i2c3 {
-	status = "disabled";
+	pinctrl-names = "default";
+	pinctrl-0 = <&i2c3_ph_pins>;
+	status = "okay";
 };
 
 &i2c4 {

@@ -1,0 +1,26 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+	fragment@0 {
+		target = <&leds>;
+
+		__overlay__ {
+			status = "okay";
+			
+			led-wlan {
+				function = LED_FUNCTION_WLAN;
+				color = <LED_COLOR_ID_GREEN>;
+				gpios = <&pio 2 1 GPIO_ACTIVE_HIGH>; /* PC1 */
+				linux,default-trigger = "on";
+			};
+
+			led-wan {
+				function = LED_FUNCTION_WAN;
+				color = <LED_COLOR_ID_GREEN>;
+				gpios = <&pio 8 16 GPIO_ACTIVE_HIGH>; /* PC16 */
+				linux,default-trigger = "on";
+			};
+		};
+	};
+};
