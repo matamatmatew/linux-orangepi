@@ -60,13 +60,6 @@
 			gpios = <&pio 2 1 GPIO_ACTIVE_HIGH>; /* PC1 */
 			default-state = "on";
 		};
-
-		led-wan {
-			function = LED_FUNCTION_WAN;
-			color = <LED_COLOR_ID_GREEN>;
-			gpios = <&pio 8 16 GPIO_ACTIVE_HIGH>; /* PC16 */
-			default-state = "on";
-		};
 	};
 
 	reg_vcc5v: vcc5v {
